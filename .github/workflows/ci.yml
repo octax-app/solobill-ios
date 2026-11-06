@@ -16,7 +16,7 @@ jobs:
   test:
     runs-on: macos-26
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - name: Generate the Xcode project
         run: brew install xcodegen && xcodegen generate
