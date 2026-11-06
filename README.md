@@ -23,8 +23,8 @@
 <p align="center">
   <img src="docs/screenshots/overview.png" alt="Overview with revenue, cost, profit and what to collect" width="200">
   <img src="docs/screenshots/customer.png" alt="A customer with billed, cost, profit and subscriptions" width="200">
-  <img src="docs/screenshots/invoice.png" alt="An issued invoice with its PDF and payment actions" width="200">
-  <img src="docs/screenshots/renewals.png" alt="Renewal drafts waiting for review" width="200">
+  <img src="docs/screenshots/invoice.png" alt="An issued invoice with its lines, internal cost and totals" width="200">
+  <img src="docs/screenshots/invoices.png" alt="Invoices in several currencies with their status" width="200">
 </p>
 
 This is the iPhone companion to [Octax Solobill](https://github.com/octax-app/solobill), billing for
