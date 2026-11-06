@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "kind": "original_due",
+    "refId": 1,
+    "message": "Apple invoice  is due on 2026-10-20",
+    "link": "/originals/1",
+    "readAt": null,
+    "pushedAt": null,
+    "createdAt": "2026-11-05T14:57:28.511Z",
+    "updatedAt": "2026-11-05T14:57:28.511Z"
+  }
+]

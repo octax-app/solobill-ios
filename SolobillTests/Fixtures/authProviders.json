@@ -1,0 +1,7 @@
+{
+  "registration": false,
+  "google": false,
+  "apple": false,
+  "googleIosClientId": null,
+  "googleAndroidClientId": null
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "id": 6,
+    "providerId": 4,
+    "name": "Apple developer account",
+    "pricing": "fixed",
+    "cycle": "yearly",
+    "defaultCost": 0,
+    "defaultPrice": 0,
+    "currency": "USD",
+    "defaultTemplateId": null,
+    "archivedAt": null,
+    "createdAt": "2026-11-05T14:57:27.158Z",
+    "updatedAt": "2026-11-05T14:57:27.158Z",
+    "providerName": "Apple"
+  }
+]

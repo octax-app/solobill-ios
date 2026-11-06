@@ -1,0 +1,11 @@
+{
+  "baseCurrency": "USD",
+  "summary": {
+    "revenue": 1950000,
+    "cost": 1200000,
+    "profit": 750000,
+    "margin": 38.5
+  },
+  "pending": 500000,
+  "linkedOriginals": []
+}

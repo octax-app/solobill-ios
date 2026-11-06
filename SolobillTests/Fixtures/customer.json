@@ -1,0 +1,14 @@
+{
+  "id": 1,
+  "status": "active",
+  "name": "Contract Co",
+  "company": "",
+  "email": "",
+  "phone": "",
+  "address": "",
+  "taxNumber": "",
+  "currency": "USD",
+  "notes": "",
+  "createdAt": "2026-11-05T14:57:27.472Z",
+  "updatedAt": "2026-11-05T14:57:27.472Z"
+}

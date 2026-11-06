@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Generate the Xcode project
+        run: brew install xcodegen && xcodegen generate
+
+      # Unit tests only. The UI tests need the web repo's demo server.
+      - name: Unit tests
+        run: |
+          device=$(xcrun simctl list devices available | grep -m1 -oE 'iPhone [^(]+' | sed 's/ *$//')
+          echo "Testing on $device"
+          xcodebuild test -project Solobill.xcodeproj -scheme Solobill \
+            -destination "platform=iOS Simulator,name=$device" \
+            -only-testing:SolobillTests | tail -40

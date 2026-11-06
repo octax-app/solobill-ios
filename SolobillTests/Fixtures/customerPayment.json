@@ -1,0 +1,15 @@
+{
+  "allocations": [
+    {
+      "invoiceId": 1,
+      "amount": 1000000,
+      "number": "INV-0001"
+    },
+    {
+      "invoiceId": 2,
+      "amount": 200000,
+      "number": "INV-0002"
+    }
+  ],
+  "excess": 0
+}

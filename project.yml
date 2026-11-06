@@ -1,0 +1,148 @@
+name: Solobill
+options:
+  bundleIdPrefix: dev.octax
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    # Raise CURRENT_PROJECT_VERSION for every TestFlight upload.
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "5"
+    ENABLE_USER_SCRIPT_SANDBOXING: true
+    CODE_SIGN_STYLE: Automatic
+# The signing team comes from Signing.xcconfig, which reads your uncommitted Local.xcconfig.
+configFiles:
+  Debug: Signing.xcconfig
+  Release: Signing.xcconfig
+targets:
+  Solobill:
+    type: application
+    platform: iOS
+    sources:
+      - Solobill
+    dependencies:
+      - target: SolobillShare
+    entitlements:
+      path: Solobill/Solobill.entitlements
+      properties:
+        aps-environment: development
+        com.apple.security.application-groups:
+          - group.dev.octax.mg
+        com.apple.developer.applesignin:
+          - Default
+        # Shares saved passwords with the website. The server serves apple-app-site-association.
+        com.apple.developer.associated-domains:
+          - webcredentials:inv.octax.dev
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.octax.mg
+        # iPhone only. XcodeGen overrides this if it is set at the project level.
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+      configs:
+        Debug:
+          API_BASE_URL: http://localhost:3000
+        Release:
+          API_BASE_URL: https://inv.octax.dev
+    info:
+      path: Solobill/Info.plist
+      properties:
+        CFBundleDisplayName: Solobill
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        API_BASE_URL: $(API_BASE_URL)
+        UILaunchScreen:
+          UIColorName: LaunchBackground
+          UIImageName: LaunchLogo
+          UIImageRespectsSafeAreaInsets: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        ITSAppUsesNonExemptEncryption: false
+        NSFaceIDUsageDescription: Face ID keeps your customer and invoice data locked when the app opens.
+        NSCameraUsageDescription: The camera scans paper invoices.
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+        CFBundleURLTypes:
+          - CFBundleURLName: dev.octax.mg.capture
+            CFBundleURLSchemes:
+              - solobill
+  SolobillShare:
+    type: app-extension
+    platform: iOS
+    sources:
+      - SolobillShare
+      - Solobill/Features/Capture/CaptureInbox.swift
+    entitlements:
+      path: SolobillShare/SolobillShare.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.dev.octax.mg
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.octax.mg.share
+        TARGETED_DEVICE_FAMILY: "1"
+    info:
+      path: SolobillShare/Info.plist
+      properties:
+        CFBundleDisplayName: Solobill
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.share-services
+          NSExtensionPrincipalClass: ShareViewController
+          NSExtensionAttributes:
+            # PDFs only. A plain file count rule would offer the extension for every file.
+            NSExtensionActivationRule: >-
+              SUBQUERY(extensionItems, $item, SUBQUERY($item.attachments, $file,
+              ANY $file.registeredTypeIdentifiers UTI-CONFORMS-TO "com.adobe.pdf").@count >= 1).@count >= 1
+  SolobillTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: SolobillTests
+        excludes:
+          - Fixtures
+      - path: SolobillTests/Fixtures
+        type: folder
+        buildPhase: resources
+    dependencies:
+      - target: Solobill
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: true
+        PRODUCT_BUNDLE_IDENTIFIER: dev.octax.mg.tests
+  SolobillUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - SolobillUITests
+    dependencies:
+      - target: Solobill
+    # So a test can place a PDF in the inbox from another process, as the extension does.
+    entitlements:
+      path: SolobillUITests/SolobillUITests.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.dev.octax.mg
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: true
+        PRODUCT_BUNDLE_IDENTIFIER: dev.octax.mg.uitests
+schemes:
+  Solobill:
+    build:
+      targets:
+        Solobill: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - SolobillTests
+        - SolobillUITests
+    archive:
+      config: Release

@@ -1,0 +1,11 @@
+{
+  "email": "owner@example.com",
+  "name": null,
+  "totpEnabled": false,
+  "hasPassword": true,
+  "workspace": {
+    "id": 1,
+    "name": "Test workspace"
+  },
+  "role": "owner"
+}

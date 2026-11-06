@@ -1,0 +1,57 @@
+[
+  {
+    "id": 4,
+    "name": "Apple",
+    "logoFile": null,
+    "website": "https://developer.apple.com",
+    "details": "",
+    "defaultTemplateId": null,
+    "archivedAt": null,
+    "createdAt": "2026-11-05T14:57:27.158Z",
+    "updatedAt": "2026-11-05T14:57:27.158Z"
+  },
+  {
+    "id": 1,
+    "name": "Cloudflare",
+    "logoFile": null,
+    "website": "https://www.cloudflare.com",
+    "details": "",
+    "defaultTemplateId": null,
+    "archivedAt": null,
+    "createdAt": "2026-11-05T14:57:27.154Z",
+    "updatedAt": "2026-11-05T14:57:27.154Z"
+  },
+  {
+    "id": 2,
+    "name": "Contabo",
+    "logoFile": null,
+    "website": "https://contabo.com",
+    "details": "",
+    "defaultTemplateId": null,
+    "archivedAt": null,
+    "createdAt": "2026-11-05T14:57:27.156Z",
+    "updatedAt": "2026-11-05T14:57:27.156Z"
+  },
+  {
+    "id": 5,
+    "name": "Google",
+    "logoFile": null,
+    "website": "https://play.google.com/console",
+    "details": "",
+    "defaultTemplateId": null,
+    "archivedAt": null,
+    "createdAt": "2026-11-05T14:57:27.159Z",
+    "updatedAt": "2026-11-05T14:57:27.159Z"
+  },
+  {
+    "id": 3,
+    "name": "Intuit",
+    "logoFile": null,
+    "website": "https://quickbooks.intuit.com",
+    "details": "",
+    "defaultTemplateId": null,
+    "archivedAt": null,
+    "createdAt": "2026-11-05T14:57:27.157Z",
+    "updatedAt": "2026-11-05T14:57:27.157Z"
+  }
+]

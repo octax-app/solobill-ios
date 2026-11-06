@@ -1,0 +1,66 @@
+name: Screenshots
+
+# Captures the README screenshots against a demo server from the web repo.
+# Download the "screenshots" artifact and copy it into docs/screenshots.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: solobill-ios
+
+      - uses: actions/checkout@v5
+        with:
+          repository: octax-app/solobill
+          path: solobill
+
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.5.2
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 26
+          cache: pnpm
+          cache-dependency-path: solobill/pnpm-lock.yaml
+
+      - name: Start the demo server
+        run: |
+          (cd solobill && pnpm install --frozen-lockfile)
+          solobill-ios/scripts/dev-server.sh 3100 > server.log 2>&1 &
+          for i in $(seq 1 120); do grep -q 'Server ready' server.log && break; sleep 2; done
+          cat server.log
+          node solobill-ios/scripts/screenshot-data.mjs http://localhost:3100
+
+      - name: Prepare a simulator
+        working-directory: solobill-ios
+        run: |
+          brew install xcodegen && xcodegen generate
+          device=$(xcrun simctl list devices available | grep -m1 -oE 'iPhone 1[0-9] Pro \(([0-9A-F-]+)\)' | grep -oE '[0-9A-F-]{36}')
+          echo "DEVICE=$device" >> "$GITHUB_ENV"
+          xcrun simctl boot "$device"
+          xcrun simctl bootstatus "$device" -b
+          xcrun simctl status_bar "$device" override --time 9:41 --batteryState charged --batteryLevel 100 \
+            --cellularMode active --cellularBars 4 --wifiBars 3
+
+      - name: Capture
+        working-directory: solobill-ios
+        env:
+          TEST_RUNNER_TEST_SERVER_URL: http://localhost:3100
+          TEST_RUNNER_SCREENSHOT_DIR: ${{ github.workspace }}/screenshots
+        run: |
+          xcodebuild test -project Solobill.xcodeproj -scheme Solobill -destination "id=$DEVICE" \
+            -only-testing:SolobillUITests/ScreenshotTests | tail -40
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: screenshots

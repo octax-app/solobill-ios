@@ -1,0 +1,30 @@
+{
+  "id": 1,
+  "providerId": 4,
+  "serviceId": null,
+  "number": "",
+  "issuedOn": "2026-10-05",
+  "dueOn": "2026-10-20",
+  "currency": "USD",
+  "fxRate": 100000000,
+  "subtotal": 500000,
+  "tax": 0,
+  "total": 500000,
+  "baseSubtotal": 500000,
+  "baseTotal": 500000,
+  "paidOn": null,
+  "pdfFile": null,
+  "notes": "",
+  "createdAt": "2026-11-05T14:57:28.495Z",
+  "updatedAt": "2026-11-05T14:57:28.573Z",
+  "lines": [
+    {
+      "id": 1,
+      "originalInvoiceId": 1,
+      "description": "Bill",
+      "quantity": 10000,
+      "unitPrice": 500000,
+      "total": 500000
+    }
+  ]
+}

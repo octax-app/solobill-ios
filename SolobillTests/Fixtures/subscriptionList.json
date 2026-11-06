@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "customerId": 1,
+    "serviceId": 6,
+    "label": "",
+    "cycle": "yearly",
+    "startedOn": "2026-10-01",
+    "nextRenewalOn": "2027-10-01",
+    "costAmount": 0,
+    "costCurrency": "USD",
+    "priceAmount": 0,
+    "priceCurrency": "USD",
+    "status": "active",
+    "createdAt": "2026-11-05T14:57:27.490Z",
+    "updatedAt": "2026-11-05T14:57:27.492Z",
+    "customerName": "Contract Co",
+    "serviceName": "Apple developer account",
+    "providerName": "Apple",
+    "pricing": "fixed",
+    "lines": [
+      {
+        "id": 1,
+        "subscriptionId": 1,
+        "position": 0,
+        "description": "Apple developer account",
+        "costAmount": 0,
+        "priceAmount": 0
+      }
+    ]
+  }
+]

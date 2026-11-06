@@ -1,0 +1,120 @@
+{
+  "baseCurrency": "USD",
+  "from": "2026-01-01",
+  "to": "2026-12-31",
+  "today": "2026-11-05",
+  "summary": {
+    "revenue": 1950000,
+    "cost": 1200000,
+    "profit": 750000,
+    "margin": 38.5
+  },
+  "toCollect": [
+    {
+      "id": 2,
+      "number": "INV-0002",
+      "dueOn": null,
+      "issuedOn": "2026-11-05",
+      "total": 1000000,
+      "baseTotal": 1000000,
+      "currency": "USD",
+      "customerId": 1,
+      "customerName": "Contract Co",
+      "due": 500000,
+      "baseDue": 500000
+    }
+  ],
+  "toCollectTotal": 500000,
+  "toPay": [
+    {
+      "id": 1,
+      "number": "",
+      "dueOn": "2026-10-20",
+      "issuedOn": "2026-10-05",
+      "total": 500000,
+      "baseTotal": 500000,
+      "currency": "USD",
+      "providerId": 4,
+      "providerName": "Apple",
+      "providerLogo": null
+    }
+  ],
+  "toPayTotal": 500000,
+  "renewals": [],
+  "trend": [
+    {
+      "month": "2025-12",
+      "revenue": 0,
+      "cost": 0,
+      "profit": 0
+    },
+    {
+      "month": "2026-01",
+      "revenue": 0,
+      "cost": 0,
+      "profit": 0
+    },
+    {
+      "month": "2026-02",
+      "revenue": 0,
+      "cost": 0,
+      "profit": 0
+    },
+    {
+      "month": "2026-03",
+      "revenue": 0,
+      "cost": 0,
+      "profit": 0
+    },
+    {
+      "month": "2026-04",
+      "revenue": 0,
+      "cost": 0,
+      "profit": 0
+    },
+    {
+      "month": "2026-05",
+      "revenue": 0,
+      "cost": 0,
+      "profit": 0
+    },
+    {
+      "month": "2026-06",
+      "revenue": 0,
+      "cost": 0,
+      "profit": 0
+    },
+    {
+      "month": "2026-07",
+      "revenue": 0,
+      "cost": 0,
+      "profit": 0
+    },
+    {
+      "month": "2026-08",
+      "revenue": 0,
+      "cost": 0,
+      "profit": 0
+    },
+    {
+      "month": "2026-09",
+      "revenue": 0,
+      "cost": 0,
+      "profit": 0
+    },
+    {
+      "month": "2026-10",
+      "revenue": 0,
+      "cost": 0,
+      "profit": 0
+    },
+    {
+      "month": "2026-11",
+      "revenue": 1950000,
+      "cost": 1200000,
+      "profit": 750000
+    }
+  ],
+  "unallocatedCost": 500000,
+  "draftsToReview": 0
+}

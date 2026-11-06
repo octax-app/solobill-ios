@@ -1,0 +1,7 @@
+# Generated from project.yml by `xcodegen generate`.
+Solobill.xcodeproj
+# Your signing team. See Signing.xcconfig.
+Local.xcconfig
+build
+DerivedData
+.DS_Store

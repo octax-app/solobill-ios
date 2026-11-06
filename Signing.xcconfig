@@ -1,0 +1,7 @@
+// Signing settings for device builds and archives. Simulator builds need none of this.
+//
+// Put your Apple Developer Team ID in Local.xcconfig, next to this file. It is not committed:
+//   DEVELOPMENT_TEAM = ABCDE12345
+DEVELOPMENT_TEAM =
+
+#include? "Local.xcconfig"

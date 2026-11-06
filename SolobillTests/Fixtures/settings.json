@@ -1,0 +1,60 @@
+{
+  "id": 1,
+  "baseCurrency": "USD",
+  "renewalLeadDays": 14,
+  "invoicePrefix": "INV-",
+  "proformaPrefix": "PF-",
+  "createdAt": "2026-11-05T14:57:26.924Z",
+  "updatedAt": "2026-11-05T14:57:26.924Z",
+  "baseCurrencyLocked": false,
+  "currencies": {
+    "AED": {
+      "decimals": 2,
+      "name": "UAE dirham"
+    },
+    "BHD": {
+      "decimals": 3,
+      "name": "Bahraini dinar"
+    },
+    "EGP": {
+      "decimals": 2,
+      "name": "Egyptian pound"
+    },
+    "EUR": {
+      "decimals": 2,
+      "name": "Euro"
+    },
+    "GBP": {
+      "decimals": 2,
+      "name": "Pound sterling"
+    },
+    "IQD": {
+      "decimals": 3,
+      "name": "Iraqi dinar"
+    },
+    "JOD": {
+      "decimals": 3,
+      "name": "Jordanian dinar"
+    },
+    "KWD": {
+      "decimals": 3,
+      "name": "Kuwaiti dinar"
+    },
+    "OMR": {
+      "decimals": 3,
+      "name": "Omani rial"
+    },
+    "QAR": {
+      "decimals": 2,
+      "name": "Qatari riyal"
+    },
+    "SAR": {
+      "decimals": 2,
+      "name": "Saudi riyal"
+    },
+    "USD": {
+      "decimals": 2,
+      "name": "US dollar"
+    }
+  }
+}

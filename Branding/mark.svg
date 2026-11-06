@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- Octax Solobill mark: a bill with a torn edge. The lines are cut out, so the background shows through. -->
+  <defs>
+    <mask id="cut">
+      <rect width="1024" height="1024" fill="white"/>
+      <rect x="350" y="300" width="324" height="44" rx="22" fill="black"/>
+      <rect x="350" y="384" width="216" height="44" rx="22" fill="black"/>
+      <rect x="350" y="468" width="270" height="44" rx="22" fill="black"/>
+      <rect x="350" y="566" width="324" height="14" rx="7" fill="black"/>
+      <rect x="350" y="622" width="112" height="44" rx="22" fill="black"/>
+      <rect x="500" y="612" width="174" height="64" rx="32" fill="black"/>
+    </mask>
+  </defs>
+  <path mask="url(#cut)" fill="white" d="
+    M 290 262 Q 290 212 340 212 H 684 Q 734 212 734 262 V 770
+    L 697 812 L 660 770 L 623 812 L 586 770 L 549 812 L 512 770
+    L 475 812 L 438 770 L 401 812 L 364 770 L 327 812 L 290 770 Z"/>
+</svg>
